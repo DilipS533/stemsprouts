@@ -4,9 +4,9 @@
   "description": "STEM Sprouts - youth-led nonprofit focused on making STEM accessible.",
   "main": "index.html",
   "scripts": {
-    "dev": "vercel dev",
-    "start": "vercel dev",
-    "build": "vercel build"
+    "dev": "cd web && npm run dev",
+    "start": "cd web && npm run start",
+    "build": "cd web && npm ci && npm run build"
   },
   "keywords": [],
   "author": "",
