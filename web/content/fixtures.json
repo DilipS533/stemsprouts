@@ -1,0 +1,15 @@
+{
+  "site": {
+    "title": "STEM Sprouts",
+    "tagline": "Big STEM ideas, by little learners.",
+    "description": "We empower young minds through fun, free STEM workshops — introducing coding, robotics, and science experiments to kids in our community."
+  },
+  "pinboard": {
+    "title": "Pinboard",
+    "subtitle": "An open-source platform for building virtual circuits and logic.",
+    "cta": {
+      "launch": "https://pinboard.stem-sprouts.org",
+      "github": "https://github.com/STEM-Sprouts/pinboard"
+    }
+  }
+}
