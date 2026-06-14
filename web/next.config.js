@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true
-  }
+    unoptimized: true,
+  },
+  // Ensure Next treats `web/` as the tracing root when multiple lockfiles exist
+  outputFileTracingRoot: path.join(__dirname),
 };
 
 module.exports = nextConfig;
