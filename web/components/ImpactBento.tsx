@@ -36,62 +36,109 @@ function Counter({end, duration=1200, format=true, startWhen}: {end:number,durat
 export default function ImpactBento(){
   const rootRef = useRef<HTMLElement|null>(null)
   const visible = useVisibility(rootRef as any)
-
   const container = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 120/1000 } }
   }
-  const cardIn = { hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }
+  const cardIn = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.46, ease: 'easeOut' } } }
 
   return (
     <section ref={rootRef} aria-labelledby="impact-heading" className="max-w-6xl mx-auto px-6 py-20">
-      <h2 id="impact-heading" className="text-2xl font-bold" style={{color:'var(--accent)'}}>Impact & Growth</h2>
+      <h2 id="impact-heading" className="text-2xl font-bold" style={{color:'var(--primary)'}}>Impact & Growth</h2>
 
-      <M.div initial="hidden" animate={visible? 'show' : 'hidden'} variants={container} className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+      <M.div initial="hidden" animate={visible? 'show' : 'hidden'} variants={container} className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
 
-        {/* Large story tile */}
-        <M.div variants={cardIn} className="md:col-span-7 bg-[rgba(255,255,255,0.04)] backdrop-blur-sm border border-white/6 rounded-2xl p-6 flex flex-col justify-end" style={{boxShadow:'0 8px 30px rgba(2,6,23,0.6)'}}>
-          <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none" aria-hidden>
-            <img src="/virtualcircuitbuilding.png" className="w-full h-full object-cover opacity-30" alt="" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        {/* Dominant hero metric (left) */}
+        <M.div variants={cardIn} className="md:col-span-4 relative rounded-2xl p-6 bg-[rgba(255,255,255,0.03)] border border-white/6">
+          <div className="flex items-center gap-4">
+            <img src="/student-portrait.jpg" alt="Student portrait" className="w-20 h-20 rounded-full object-cover border border-white/6" />
+            <div>
+              <div className="text-sm text-gray-300">Students engaged</div>
+              <div className="mt-2">
+                <Counter end={12000} duration={1400} startWhen={visible} />
+              </div>
+              <div className="mt-2 text-xs text-gray-400">In hands-on workshops and classroom pilots — building projects that matter.</div>
+            </div>
           </div>
-          <div className="relative z-10 text-white">
-            <div className="text-sm uppercase opacity-80">Human Story</div>
-            <div className="mt-2 text-2xl md:text-3xl font-semibold">A child discovers coding for the first time</div>
-            <p className="mt-3 text-sm text-gray-200 max-w-xl">Our student mentors guide hands-on experiments that transform curiosity into confidence. Stories like this are the reason we run free workshops across communities.</p>
-            <div className="mt-4">
-              <a href="#stories" className="inline-block rounded-md bg-[var(--color-accent)] text-black px-3 py-1 font-medium">Read the story</a>
+          <div className="mt-6 text-sm text-gray-400">"We started with a question and ended with a project." — Classroom outcome snapshot</div>
+        </M.div>
+
+        {/* Student story (center, prominent) */}
+        <M.div variants={cardIn} className="md:col-span-5 bg-[rgba(255,255,255,0.04)] backdrop-blur-sm border border-white/6 rounded-2xl p-6 flex flex-col">
+          <div className="flex-1">
+            <div className="text-sm uppercase text-gray-300">Student story</div>
+            <h3 className="mt-2 text-2xl font-semibold">Jayla built a sensor that keeps her classroom garden alive</h3>
+            <p className="mt-3 text-sm text-gray-200 max-w-xl">Jayla used Pinboard to prototype a moisture sensor for the school garden. Her project sparked a cross-class collaboration where students tracked data and created a shared dashboard.</p>
+          </div>
+
+          <div className="mt-6 flex items-center gap-4">
+            <img src="/student-portrait-2.jpg" alt="Jayla" className="w-16 h-16 rounded-lg object-cover border border-white/6" />
+            <div>
+              <div className="font-semibold">Jayla, 5th grade</div>
+              <div className="text-xs text-gray-400">Student mentor • Project lead</div>
+            </div>
+            <div className="ml-auto">
+              <a href="#story-jayla" className="inline-block btn btn-ghost">Read story</a>
             </div>
           </div>
         </M.div>
 
-        {/* Metric tiles - right column */}
-        <div className="md:col-span-5 grid grid-cols-1 gap-6">
-          <M.div variants={cardIn} className="bg-[rgba(255,255,255,0.03)] backdrop-blur-sm border border-white/6 rounded-xl p-5">
-            <div className="text-sm text-gray-300">Students reached</div>
+        {/* Supporting metrics + growth viz (right) */}
+        <div className="md:col-span-3 space-y-4">
+          <M.div variants={cardIn} className="rounded-xl p-4 bg-[rgba(255,255,255,0.02)] border border-white/6">
+            <div className="text-sm text-gray-300">Growth</div>
             <div className="mt-3">
-              <Counter end={12000} duration={1300} startWhen={visible} />
+              <GrowthChart data={[10, 18, 34, 52, 78, 120, 260]} startWhen={visible} />
             </div>
-            <div className="mt-2 text-xs text-gray-400">Hands-on learning across schools and community centers.</div>
+            <div className="mt-2 text-xs text-gray-400">Year-over-year growth in students & workshops.</div>
           </M.div>
 
-          <M.div variants={cardIn} className="bg-[rgba(255,255,255,0.03)] backdrop-blur-sm border border-white/6 rounded-xl p-5">
-            <div className="text-sm text-gray-300">Workshops delivered</div>
-            <div className="mt-3">
-              <Counter end={150} duration={900} startWhen={visible} />
-            </div>
-            <div className="mt-2 text-xs text-gray-400">Student-led sessions focused on coding, robotics, and maker projects.</div>
+          <M.div variants={cardIn} className="rounded-xl p-4 bg-[rgba(255,255,255,0.02)] border border-white/6">
+            <SupportingMetric label="Workshops" value={150} explanation="Student-led sessions across community centers." startWhen={visible} />
           </M.div>
 
-          <M.div variants={cardIn} className="bg-[rgba(255,255,255,0.03)] backdrop-blur-sm border border-white/6 rounded-xl p-5">
-            <div className="text-sm text-gray-300">Active chapters</div>
-            <div className="mt-3">
-              <Counter end={30} duration={800} startWhen={visible} />
-            </div>
-            <div className="mt-2 text-xs text-gray-400">Local student chapters organizing workshops and outreach.</div>
+          <M.div variants={cardIn} className="rounded-xl p-4 bg-[rgba(255,255,255,0.02)] border border-white/6">
+            <SupportingMetric label="Active chapters" value={30} explanation="Local chapters run by student leaders." startWhen={visible} />
           </M.div>
         </div>
+
       </M.div>
     </section>
+  )
+}
+
+function SupportingMetric({ label, value, explanation, startWhen }: { label: string; value: number; explanation: string; startWhen: boolean }){
+  return (
+    <div>
+      <div className="text-sm text-gray-300">{label}</div>
+      <div className="mt-2">
+        <Counter end={value} duration={900} startWhen={startWhen} />
+      </div>
+      <div className="mt-2 text-xs text-gray-400">{explanation}</div>
+    </div>
+  )
+}
+
+function GrowthChart({ data, startWhen }: { data: number[]; startWhen: boolean }){
+  // normalize data to path
+  const width = 200, height = 48
+  const max = Math.max(...data)
+  const points = data.map((v,i)=> {
+    const x = (i/(data.length-1)) * width
+    const y = height - (v/max) * height
+    return [x,y]
+  })
+  const d = points.map((p,i)=> `${i===0? 'M' : 'L'} ${p[0]} ${p[1]}`).join(' ')
+  return (
+    <svg width="100%" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMinYMid meet" aria-hidden>
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="var(--primary)" stopOpacity="0.4" />
+        </linearGradient>
+      </defs>
+      <path d={d} fill="none" stroke="url(#g1)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      </path>
+    </svg>
   )
 }
