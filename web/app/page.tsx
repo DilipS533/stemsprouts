@@ -6,6 +6,7 @@ import PinboardShowcase from '../components/PinboardShowcase'
 import WorkshopSection from '../components/WorkshopSection'
 import PartnerGrid from '../components/PartnerGrid'
 import StatsAnimated from '../components/StatsAnimated'
+import TeamSection from '../components/TeamSection'
 
 export default function Page(){
   return (
@@ -21,6 +22,7 @@ export default function Page(){
             <StatsAnimated />
             <WorkshopSection />
             <PartnerGrid />
+            <TeamSection />
           </div>
         </section>
       </main>
