@@ -42,8 +42,8 @@ export default function Hero() {
           )}
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-            <div className="w-full h-80 rounded-2xl overflow-hidden shadow-2xl" style={{ background: 'linear-gradient(135deg, rgba(74,222,128,0.08), rgba(0,0,0,0.5))' }}>
-              <img src="/background.jpg" alt="Students building circuits" className="w-full h-full object-cover" />
+            <div className="w-full h-80 rounded-2xl overflow-hidden shadow-2xl relative" style={{ background: 'linear-gradient(135deg, rgba(74,222,128,0.08), rgba(0,0,0,0.5))' }}>
+              <img src="/background.jpg" alt="Students building circuits" className="w-full h-full object-cover" width={1600} height={900} loading="eager" />
             </div>
           </motion.div>
         </div>

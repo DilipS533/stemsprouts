@@ -10,8 +10,8 @@ export default function PinboardShowcase(){
             <a href="https://github.com/STEM-Sprouts/pinboard" className="btn-outline">View Code</a>
           </div>
         </div>
-        <div className="w-full h-56 rounded-xl overflow-hidden" style={{background:'linear-gradient(135deg, rgba(74,222,128,0.06), rgba(0,0,0,0.4))'}}>
-          <img src="/virtualcircuitbuilding.png" alt="Pinboard screenshot" className="w-full h-full object-cover" loading="lazy" />
+        <div className="w-full h-56 rounded-xl overflow-hidden relative" style={{background:'linear-gradient(135deg, rgba(74,222,128,0.06), rgba(0,0,0,0.4))'}}>
+          <img src="/virtualcircuitbuilding.png" alt="Pinboard screenshot" className="w-full h-full object-cover" width={1200} height={600} loading="lazy" />
         </div>
       </div>
     </section>
