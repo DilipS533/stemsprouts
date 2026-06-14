@@ -139,35 +139,90 @@ export default function PinboardShowcase(){
           </div>
         </div>
 
-        {/* Storytelling sections */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <article className="md:col-span-2 rounded-lg bg-[rgba(255,255,255,0.01)] p-6 border border-white/6">
-            <h3 className="text-xl font-bold">What is Pinboard?</h3>
-            <p className="mt-2 text-gray-300">Pinboard is a browser-based canvas where learners can snap together circuits, sensors, and blocks of code. It's designed for fast iteration and classroom scale — teachers can prototype a lesson, then share it with students instantly.</p>
+        {/* Inline sandbox + Storytelling sections */}
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          {/* Left: Product + inline sandbox */}
+          <div className="lg:col-span-2 rounded-lg bg-[rgba(255,255,255,0.01)] p-6 border border-white/6">
+            <h3 className="text-xl font-bold">What Pinboard Is</h3>
+            <p className="mt-2 text-gray-300">A browser-first workspace where students prototype circuits and code together. It’s designed so teachers can ship lessons quickly and students can make something real in minutes.</p>
 
-            <h4 className="mt-6 font-semibold">Why it exists</h4>
-            <p className="mt-2 text-gray-300">Students learn by connecting ideas. Pinboard removes friction — no soldering, no expensive kits — just concepts, exploration, and tangible outcomes that educators can measure and reuse.</p>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 className="font-semibold">Try it — 30s sandbox</h4>
+                <p className="mt-1 text-sm text-gray-400">No signup. Toggle components and see immediate results.</p>
 
-            <h4 className="mt-6 font-semibold">How it works</h4>
-            <ol className="list-decimal list-inside mt-2 text-gray-300 space-y-2">
-              <li>Drag components onto the canvas (sensors, LEDs, motors).</li>
-              <li>Connect wires visually and try live updates in the browser.</li>
-              <li>Export a lesson or share a link so students can start immediately.</li>
-            </ol>
+                {/* Inline micro-sandbox: small interactive controls that map to the demo above */}
+                <div className="mt-3 p-3 bg-black/20 rounded-md border border-white/6">
+                  <InlineSandbox />
+                </div>
+              </div>
 
-            <div className="mt-6 flex gap-3">
-              <a href="/pinboard" className="btn">Try in your browser</a>
-              <a href="https://github.com/STEM-Sprouts/pinboard" className="btn-outline">View on GitHub</a>
+              <div>
+                <h4 className="font-semibold">Why it exists</h4>
+                <p className="mt-1 text-sm text-gray-400">Pinboard lowers friction between idea and prototype — students iterate rapidly, test hypotheses, and celebrate small wins that build confidence.</p>
+
+                <div className="mt-4 space-y-3">
+                  <Outcome title="Student outcomes" desc="Students go from idea → prototype in a single session." />
+                  <Outcome title="Teacher outcomes" desc="Teachers reuse lessons, track engagement, and scale workshops." />
+                </div>
+              </div>
             </div>
-          </article>
 
+            <div className="mt-6">
+              <h4 className="font-semibold">Product quick tour</h4>
+              <ol className="list-decimal list-inside mt-2 text-gray-300 space-y-2">
+                <li>Open the sandbox and add a component.</li>
+                <li>Connect wires visually and press play — see live updates.</li>
+                <li>Save the lesson and share the link with students.</li>
+              </ol>
+            </div>
+          </div>
+
+          {/* Right: Social proof / Testimonials */}
           <aside className="rounded-lg p-6 border border-white/6 bg-[rgba(255,255,255,0.01)]">
-            <h4 className="font-semibold">Open source & community</h4>
-            <p className="mt-2 text-gray-300">Pinboard is open-source. Teachers contribute lessons, and students share creative projects. Join the repo to report issues, propose features, or submit lesson plans.</p>
-            <div className="mt-4 text-sm text-gray-400">Recent contributions: lesson templates, sensor drivers, and classroom-ready activities.</div>
+            <h4 className="font-semibold">What teachers & students say</h4>
+            <div className="mt-4 space-y-4">
+              <Testimonial name="Maria, 3rd grade teacher" quote="Pinboard helped my class build real circuits on day one — engagement skyrocketed." />
+              <Testimonial name="Jayden, student" quote="I made a robot blink — and then I made it dance." small />
+            </div>
+            <div className="mt-4 text-sm text-gray-400">Open-source • Classroom-tested • Free lessons</div>
           </aside>
         </div>
       </div>
     </section>
+  )
+}
+
+function InlineSandbox(){
+  const [led, setLed] = React.useState(false)
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center gap-3">
+        <button className="btn btn-primary btn-sm" onClick={()=> setLed(v=>!v)}>{led ? 'Turn off' : 'Turn on'}</button>
+        <div className="ml-auto text-sm text-gray-400">Preview</div>
+      </div>
+      <div className="w-full h-24 rounded-md bg-black/30 border border-white/6 flex items-center justify-center">
+        <div className={`w-8 h-8 rounded-full ${led ? 'bg-[var(--accent)] shadow-[0_8px_24px_rgba(16,185,129,0.12)]' : 'bg-gray-600'}`}></div>
+      </div>
+      <div className="text-xs text-gray-400">Toggle the LED to see how components respond in real-time.</div>
+    </div>
+  )
+}
+
+function Outcome({ title, desc }: { title: string; desc: string }){
+  return (
+    <div className="p-3 rounded-md bg-[rgba(255,255,255,0.01)] border border-white/6">
+      <div className="text-sm font-semibold">{title}</div>
+      <div className="text-xs text-gray-400 mt-1">{desc}</div>
+    </div>
+  )
+}
+
+function Testimonial({ name, quote, small }: { name: string; quote: string; small?: boolean }){
+  return (
+    <div className={`p-3 rounded-md bg-[rgba(0,0,0,0.18)] border border-white/6 ${small ? 'text-sm' : ''}`}>
+      <div className="font-medium">{name}</div>
+      <div className="text-gray-300 mt-1">“{quote}”</div>
+    </div>
   )
 }
