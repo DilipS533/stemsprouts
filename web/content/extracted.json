@@ -1,7 +1,7 @@
 {
   "index.html": {
-    "h2": "\"Big STEM ideas, by little learners.\"",
-    "p": "We empower young minds through fun, free STEM workshops — introducing coding, robotics, and science experiments to kids in our community."
+    "h2": "Big STEM ideas, by little learners.",
+    "p": "We empower young minds through fun, free STEM workshops — hands-on coding, robotics, and science for K–5 students, led by student volunteers."
   },
   "about.html": {
     "h2": "About STEM Sprouts",
@@ -9,6 +9,6 @@
   },
   "pinboard.html": {
     "h2": "Pinboard",
-    "p": "An open-source, browser-based platform designed for young makers to build virtual circuits, code logic, and explore STEM concepts freely."
+    "p": "An open-source, browser-based platform where young makers build virtual circuits, write code, and explore STEM concepts — no download required."
   }
 }

@@ -37,6 +37,8 @@ body {
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   background-color: var(--bg);
   color: var(--text);
+  /* layered background: subtle radial light + soft vignette */
+  background-image: radial-gradient(1200px 600px at 10% 10%, rgba(37,99,235,0.04), transparent 10%), radial-gradient(900px 400px at 90% 90%, rgba(6,182,212,0.03), transparent 12%), linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.06));
 }
 
 /* Reduced motion and focus styles */
@@ -49,6 +51,10 @@ body {
   outline: 2px solid rgba(37,99,235,0.9);
   outline-offset: 2px;
 }
+
+/* Typographic scale tweak for stronger hero presence */
+h1, .hero-title { font-size: clamp(2rem, 4vw + 1rem, 3.5rem); letter-spacing: -0.02em; }
+h2, .hero-sub { font-size: clamp(1rem, 1.6vw + .6rem, 1.25rem); }
 
 /* Liquid glass nav tweaks */
 .card-soft { background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(255,255,255,0.03); }
