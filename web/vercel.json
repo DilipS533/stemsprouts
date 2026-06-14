@@ -5,8 +5,5 @@
   ],
   "env": {
     "NEXT_PUBLIC_SITE_TITLE": "LLE STEM"
-  },
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+  }
 }
