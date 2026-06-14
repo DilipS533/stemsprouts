@@ -18,25 +18,25 @@ export default function Hero(){
   const entrance = { initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6, ease: 'easeOut' } }
 
   return (
-    <section aria-labelledby="home-heading" className="relative min-h-[72vh] flex items-center" style={{ paddingTop: 84 }}>
+    <section aria-labelledby="home-heading" className="relative min-h-[72vh] flex items-center section-hero">
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-6">
             {reduce ? (
-              <h1 id="home-heading" className="text-4xl md:text-5xl font-extrabold leading-tight">Big STEM ideas, by little learners.</h1>
+              <h1 id="home-heading" className="hero-title">Big STEM ideas, by little learners.</h1>
             ) : (
               <M.div {...entrance}>
-                <h1 id="home-heading" className="text-4xl md:text-5xl font-extrabold leading-tight">Big STEM ideas, by little learners.</h1>
+                <h1 id="home-heading" className="hero-title">Big STEM ideas, by little learners.</h1>
               </M.div>
             )}
 
             <M.div {...(!reduce ? entrance : {})}>
-              <p className="mt-6 text-lg text-gray-300 max-w-2xl">Free, hands-on workshops for K–5 students — student-led, community-powered. Join us for coding, robotics, and live science demos that make learning feel like play.</p>
+              <p className="mt-6 text-lg text-gray-300 max-w-2xl hero-sub">Free, hands-on workshops for K–5 students — student-led, community-powered. Join us for coding, robotics, and live science demos that make learning feel like play.</p>
             </M.div>
 
             <M.div {...(!reduce ? { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 0.3 } } : {})} className="mt-8 flex flex-wrap gap-3">
-              <a href="#join" className="inline-flex items-center justify-center rounded-md px-4 py-2 bg-[var(--color-accent)] text-white font-semibold shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2" aria-label="Join STEM Sprouts">Join</a>
-              <a href="#donate" className="inline-flex items-center justify-center rounded-md px-4 py-2 border border-current text-current bg-transparent font-medium hover:bg-white/3 focus:outline-none focus:ring-2 focus:ring-offset-2" aria-label="Donate to STEM Sprouts">Donate</a>
+              <a href="#join" className="btn btn-primary btn-xl" aria-label="Join STEM Sprouts">Join</a>
+              <a href="#donate" className="btn btn-ghost" aria-label="Donate to STEM Sprouts">Donate</a>
             </M.div>
 
             <M.div {...(!reduce ? { initial: { opacity: 0, y: 8 }, animate: { opacity: 1, y: 0 }, transition: { delay: 0.45 } } : {})} className="mt-6 text-sm text-gray-400 max-w-xl">
