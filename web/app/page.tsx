@@ -18,12 +18,21 @@ export default function Page(){
         <Hero />
         <section className="px-6">
           <div className="max-w-6xl mx-auto">
+            {/* Discovery */}
             <PinboardShowcase />
+
+            {/* Building */}
+            <WorkshopSection />
+
+            {/* Impact & metrics */}
             <ImpactBento />
             <StatsAnimated />
-            <WorkshopSection />
-            <PartnerGrid />
+
+            {/* Leadership & trust */}
             <TeamSection />
+            <PartnerGrid />
+
+            {/* Action */}
             <ContactDecision />
           </div>
         </section>
