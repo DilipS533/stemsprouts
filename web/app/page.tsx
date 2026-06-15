@@ -7,6 +7,7 @@ import WorkshopSection from '../components/WorkshopSection'
 import PartnerGrid from '../components/PartnerGrid'
 import StatsAnimated from '../components/StatsAnimated'
 import TeamSection from '../components/TeamSection'
+import ContactDecision from '../components/ContactDecision'
 
 export default function Page(){
   return (
@@ -23,6 +24,7 @@ export default function Page(){
             <WorkshopSection />
             <PartnerGrid />
             <TeamSection />
+            <ContactDecision />
           </div>
         </section>
       </main>
