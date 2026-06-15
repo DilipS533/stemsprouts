@@ -15,10 +15,10 @@ export default function Page(){
       <Nav />
       <main>
         <Hero />
-        <ImpactBento />
         <section className="px-6">
           <div className="max-w-6xl mx-auto">
             <PinboardShowcase />
+            <ImpactBento />
             <StatsAnimated />
             <WorkshopSection />
             <PartnerGrid />
