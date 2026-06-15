@@ -15,8 +15,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preload" as="image" href="/virtualcircuitbuilding.png" />
       </head>
       <body>
-        <a href="#main" className="sr-only focus:not-sr-only focus:top-4 focus:left-4 fixed z-[100] rounded-md bg-white/6 p-2">Skip to content</a>
-        <div id="main">{children}</div>
+  <a href="#main" className="sr-only focus:not-sr-only focus:top-4 focus:left-4 fixed z-[100] rounded-md bg-white/6 p-2">Skip to content</a>
+  <div id="main" role="main">{children}</div>
       </body>
     </html>
   )

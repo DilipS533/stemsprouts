@@ -63,7 +63,7 @@ export default function Hero(){
               </div>
 
               {/* subtle overlay accents */}
-              <svg className="absolute left-4 bottom-4 w-28 opacity-30" viewBox="0 0 100 100" aria-hidden>
+              <svg className="absolute left-4 bottom-4 w-28 opacity-30" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
                 <defs>
                   <linearGradient id="g1" x1="0" x2="1">
                     <stop offset="0" stopColor="#fff" stopOpacity="0.06" />
