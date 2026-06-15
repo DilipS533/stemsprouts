@@ -32,6 +32,10 @@ export default function Hero(){
 
             <M.div {...(!reduce ? entrance : {})}>
               <p className="mt-6 text-lg text-gray-300 max-w-2xl hero-sub">Free, hands-on workshops for K–5 students — student-led, community-powered. Join us for coding, robotics, and live science demos that make learning feel like play.</p>
+
+              <div className="mt-4 text-sm">
+                <a href="#pinboard" className="text-[var(--accent)] font-medium">Try Pinboard — prototype in minutes</a>
+              </div>
             </M.div>
 
             <M.div {...(!reduce ? { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 0.3 } } : {})} className="mt-8 flex flex-wrap gap-3">

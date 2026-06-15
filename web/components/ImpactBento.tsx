@@ -43,7 +43,7 @@ export default function ImpactBento(){
   const cardIn = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.46, ease: 'easeOut' } } }
 
   return (
-    <section ref={rootRef} aria-labelledby="impact-heading" className="max-w-6xl mx-auto px-6 py-20">
+  <section id="impact" ref={rootRef} aria-labelledby="impact-heading" className="max-w-6xl mx-auto px-6 py-20">
       <h2 id="impact-heading" className="text-2xl font-bold" style={{color:'var(--primary)'}}>Impact & Growth</h2>
 
       <M.div initial="hidden" animate={visible? 'show' : 'hidden'} variants={container} className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">

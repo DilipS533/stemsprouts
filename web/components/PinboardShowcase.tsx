@@ -43,7 +43,7 @@ export default function PinboardShowcase(){
   }
 
   return (
-    <section aria-labelledby="pinboard-heading" className="max-w-6xl mx-auto px-6 py-20">
+  <section id="pinboard" aria-labelledby="pinboard-heading" className="max-w-6xl mx-auto px-6 py-20">
       <div className="bg-[rgba(255,255,255,0.02)] rounded-2xl p-6 md:p-10">
         {/* Product Hero */}
         <div className="md:flex md:items-center md:gap-8">
@@ -53,6 +53,7 @@ export default function PinboardShowcase(){
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="https://pinboard.stem-sprouts.org" className="btn btn-xl">Try Pinboard</a>
               <a href="https://github.com/STEM-Sprouts/pinboard" className="btn-outline">Open Source</a>
+              <a href="#impact" className="btn btn-ghost">See impact</a>
             </div>
             <div className="mt-6 text-sm text-gray-400">Pinboard is used in workshops and classroom pilots — open-source and lightweight enough to run in any browser.</div>
           </div>
