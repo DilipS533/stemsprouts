@@ -44,6 +44,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* If you self-host fonts, add preload links in layout and set font-display: swap in @font-face. */
+
 /* Reduced motion and focus styles */
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }

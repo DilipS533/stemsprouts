@@ -51,7 +51,7 @@ export default function ImpactBento(){
         {/* Dominant hero metric (left) */}
         <M.div variants={cardIn} className="md:col-span-4 relative rounded-2xl p-6 bg-[rgba(255,255,255,0.03)] border border-white/6">
           <div className="flex items-center gap-4">
-            <img src="/student-portrait.jpg" alt="Student portrait" className="w-20 h-20 rounded-full object-cover border border-white/6" />
+            <img src="/student-portrait.jpg" alt="Student portrait" className="w-20 h-20 rounded-full object-cover border border-white/6" width={160} height={160} loading="lazy" decoding="async" />
             <div>
               <div className="text-sm text-gray-300">Students engaged</div>
               <div className="mt-2">
@@ -72,7 +72,7 @@ export default function ImpactBento(){
           </div>
 
           <div className="mt-6 flex items-center gap-4">
-            <img src="/student-portrait-2.jpg" alt="Jayla" className="w-16 h-16 rounded-lg object-cover border border-white/6" />
+            <img src="/student-portrait-2.jpg" alt="Jayla" className="w-16 h-16 rounded-lg object-cover border border-white/6" width={128} height={128} loading="lazy" decoding="async" />
             <div>
               <div className="font-semibold">Jayla, 5th grade</div>
               <div className="text-xs text-gray-400">Student mentor • Project lead</div>

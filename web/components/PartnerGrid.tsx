@@ -69,7 +69,7 @@ export default function PartnerGrid({ showFilters = true }: { showFilters?: bool
               const size = highlight === i ? 68 : 56
               return (
                 <button key={l.src} onMouseEnter={()=> setHighlight(i)} onMouseLeave={()=> setHighlight(null)} onFocus={()=> setHighlight(i)} onBlur={()=> setHighlight(null)} aria-label={`${l.alt} partner`} style={{ transform: `translate(${x}px, ${y}px)` }} className="absolute rounded-full p-2 bg-white/2 border border-white/6 flex items-center justify-center transition-all" >
-                  <img src={l.src} alt={l.alt} className="object-contain" style={{ width: size, height: size }} />
+                  <img src={l.src} alt={l.alt} className="object-contain" width={size} height={size} loading="lazy" decoding="async" />
                 </button>
               )
             })}
@@ -82,8 +82,8 @@ export default function PartnerGrid({ showFilters = true }: { showFilters?: bool
         <h4 className="text-sm text-gray-400">Partners (list)</h4>
         <ul className="mt-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {filtered.map(l=> (
-            <li key={l.src} className="p-3 bg-white/2 rounded-md border border-white/6 flex items-center gap-3">
-              <img src={l.src} alt="" className="w-10 h-10 object-contain" />
+              <li key={l.src} className="p-3 bg-white/2 rounded-md border border-white/6 flex items-center gap-3">
+              <img src={l.src} alt="" className="w-10 h-10 object-contain" width={40} height={40} loading="lazy" decoding="async" />
               <div>
                 <div className="text-sm font-medium">{l.alt}</div>
                 <div className="text-xs text-gray-400">{l.tag}</div>

@@ -50,7 +50,8 @@ export default function Hero(){
 
           <div className="md:col-span-6 hidden md:block">
             <M.div {...(!reduce ? { initial: { opacity: 0, scale: 0.98 }, animate: { opacity: 1, scale: 1 }, transition: { delay: 0.25, duration: 0.8 } } : {})} className="relative w-full h-80 rounded-2xl overflow-hidden shadow-2xl">
-              <img src="/virtualcircuitbuilding.png" alt="Students building a circuit" className="w-full h-full object-cover" />
+              {/* TODO: replace srcSet with AVIF/WebP converted assets for better compression */}
+              <img src="/virtualcircuitbuilding.png" alt="Students building a circuit" className="w-full h-full object-cover" width={1200} height={640} loading="lazy" decoding="async" srcSet="/virtualcircuitbuilding.png 1200w" sizes="(min-width: 768px) 48vw, 100vw" />
 
               <div className="absolute right-6 top-6 w-56 p-4 bg-[rgba(0,0,0,0.45)] border border-white/6 rounded-xl backdrop-blur-sm text-white">
                 <div className="text-xs uppercase opacity-90">Workshop Spotlight</div>
