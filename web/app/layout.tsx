@@ -3,26 +3,27 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'STEM Sprouts — Expanding STEM Access Through Student-Led Chapters',
+    default: 'STEM Sprouts — Local Chapters. Global Impact.',
     template: '%s | STEM Sprouts',
   },
   description:
-    'STEM Sprouts is building a global network of student-led STEM chapters that expand access to STEM education. From Georgia to Kenya, we empower students to lead STEM learning in their communities.',
+    'STEM Sprouts expands access to STEM education through a growing network of student-led chapters. From Georgia to Kenya, students lead free hands-on workshops for their communities.',
   keywords: [
     'STEM education',
-    'student-led chapters',
+    'student-led',
+    'nonprofit',
+    'STEM chapters',
+    'youth education',
     'STEM access',
-    'youth nonprofit',
-    'coding workshops',
-    'robotics',
-    'Kenya STEM',
     'Pinboard',
+    'Kenya STEM',
+    'Georgia STEM',
     'STEM Sprouts',
   ],
   openGraph: {
-    title: 'STEM Sprouts — Expanding STEM Access Through Student-Led Chapters',
+    title: 'STEM Sprouts — Local Chapters. Global Impact.',
     description:
-      'A global network of student-led STEM chapters expanding access to STEM education from Georgia to Kenya.',
+      'A growing network of student-led STEM chapters expanding access to hands-on STEM education from Georgia to Kenya.',
     url: 'https://stem-sprouts.org',
     siteName: 'STEM Sprouts',
     type: 'website',
@@ -34,8 +35,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&family=Lato:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
           rel="stylesheet"
         />
         {/* Google Analytics */}

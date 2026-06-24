@@ -1,0 +1,126 @@
+.hero {
+  padding: calc(var(--nav-height) + var(--sp-16)) 0 var(--sp-16);
+  background: var(--color-bg-warm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  align-items: center;
+}
+
+.content {
+  max-width: 540px;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green-600);
+  margin-bottom: var(--sp-4);
+}
+
+.title {
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  line-height: 1.1;
+  margin-bottom: var(--sp-6);
+  color: var(--warm-950);
+}
+
+.accent {
+  color: var(--green-700);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--warm-600);
+  margin-bottom: var(--sp-8);
+  max-width: 48ch;
+}
+
+.actions {
+  display: flex;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-8);
+}
+
+.trust {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.trustItem {
+  font-size: 0.8125rem;
+  color: var(--warm-500);
+}
+
+.trustItem strong {
+  color: var(--warm-800);
+  font-weight: 600;
+}
+
+.trustDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--warm-300);
+}
+
+.imageWrap {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.imageCaption {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: var(--sp-4);
+  right: var(--sp-4);
+  font-size: 0.75rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: calc(var(--nav-height) + var(--sp-8)) 0 var(--sp-8);
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+
+  .imageWrap {
+    order: -1;
+  }
+
+  .title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .trust {
+    gap: var(--sp-3);
+  }
+}

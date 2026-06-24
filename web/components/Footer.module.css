@@ -1,0 +1,131 @@
+.footer {
+  background: var(--warm-950);
+  color: var(--warm-300);
+  padding: var(--sp-16) 0 var(--sp-8);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--sp-12);
+}
+
+.brandCol {
+  max-width: 320px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.logo {
+  border-radius: 50%;
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: #fff;
+}
+
+.tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9375rem;
+  color: var(--green-300);
+  margin-bottom: var(--sp-3);
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--warm-400);
+  margin-bottom: var(--sp-4);
+}
+
+.fiscal {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--warm-500);
+}
+
+.fiscal a {
+  color: var(--green-400);
+  text-decoration: underline;
+  text-decoration-color: var(--green-400);
+  text-underline-offset: 2px;
+}
+
+.fiscal a:hover {
+  color: var(--green-300);
+}
+
+.linksCol h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--warm-400);
+  margin-bottom: var(--sp-4);
+}
+
+.colTitle {
+  font-family: var(--font-sans);
+}
+
+.linksCol ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.linksCol a {
+  font-size: 0.875rem;
+  color: var(--warm-300);
+  transition: color 150ms ease;
+}
+
+.linksCol a:hover {
+  color: #fff;
+}
+
+.bottom {
+  margin-top: var(--sp-12);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--warm-800);
+}
+
+.bottom p {
+  font-size: 0.8125rem;
+  color: var(--warm-500);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-8);
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

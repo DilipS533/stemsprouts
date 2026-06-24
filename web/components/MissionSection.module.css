@@ -1,0 +1,55 @@
+.mission {
+  background: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+  align-items: start;
+}
+
+.content {
+  max-width: 500px;
+}
+
+.body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--warm-600);
+  margin-bottom: var(--sp-4);
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.value {
+  padding: var(--sp-6);
+  background: var(--warm-50);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--green-600);
+}
+
+.valueTitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--sp-2);
+  color: var(--warm-900);
+}
+
+.valueDesc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--warm-600);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+}
